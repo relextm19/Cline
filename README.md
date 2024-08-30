@@ -12,19 +12,20 @@
 - **-r**: Enable recursive analysis of subdirectories.
 - **-h**: Display help information.
 
-### Requirements
-- A C++ compiler such as `g++`, `clang`, or similar.
-- C++ version 17 or higher.
+###Requirements
+A C++ compiler such as g++, clang, or similar.
+C++ version 17 or higher.
+Make utility installed on your system to use the provided Makefile.
 
 ### Usage
 
 1. **Compile the Code**:  
-   Use your preferred C++ compiler to compile the code. For example, using `g++`:
+   Compile code with make using
    ```sh
-   g++ -std=c++17 main.cpp -o cline
+   make
    ```
 
-2. **Run the Program**:  
+3. **Run the Program**:  
    Run the compiled executable, specifying any desired options:
    ```sh
    ./cline -p <path> -r
