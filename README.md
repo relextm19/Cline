@@ -12,7 +12,7 @@
 - **-r**: Enable recursive analysis of subdirectories.
 - **-h**: Display help information.
 
-###Requirements
+### Requirements
 A C++ compiler such as g++, clang, or similar.
 C++ version 17 or higher.
 Make utility installed on your system to use the provided Makefile.
