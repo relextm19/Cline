@@ -29,6 +29,10 @@
    ```sh
    ./cline -p <path> -r
    ```
+   Or just use it without any to use it on the directory you are located in(You must add the compiled program to the path first):
+   ```sh
+   ./cline
+   ```
 
 ### Example Command
 ```sh
