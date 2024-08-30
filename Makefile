@@ -15,7 +15,7 @@ SRCS = main.cpp common.cpp args.cpp file_actions.cpp printing.cpp
 OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/common.o $(OBJ_DIR)/args.o $(OBJ_DIR)/file_actions.o $(OBJ_DIR)/printing.o
 
 # Executable name
-EXEC = main
+EXEC = cline
 
 # Default target
 all: $(EXEC)
