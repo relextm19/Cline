@@ -11,6 +11,6 @@ int main(int argc, char* argv[]) {
     parse_args(argc, argv, &path);
     itterate_files(path, &file_datas);
     print_header();
-    print_data(file_datas);
+    // print_data(file_datas);
     print_footer();
 }
