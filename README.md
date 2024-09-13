@@ -4,13 +4,15 @@
 
 ### Features
 - **Line, Character, and Whitespace Counting**: Analyzes files to provide a breakdown of lines, characters, and whitespace.
-- **File Extension Support**: Supports multiple file extensions including `.cpp`, `.py`, `.c`, `.java`, `.html`, `.css`, and more.
-- **Recursive Mode**: Optionally analyze files in subdirectories with the `-r` flag.
+- **File Extension and Directory Banning**: 
+- **Recursive Mode**: 
 
 ### Modes
 - **-p**: Specify the path to the directory you want to analyze.
 - **-r**: Enable recursive analysis of subdirectories.
 - **-h**: Display help information.
+- **-e**: Ban file extensions
+- **-d**: Ban directories
 
 ### Requirements
 A C++ compiler such as g++, clang, or similar.
