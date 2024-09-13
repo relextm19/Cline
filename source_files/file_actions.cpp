@@ -6,13 +6,24 @@
 #include "../header_files/common.h"
 
 bool has_allowed_extension(const std::filesystem::path& path){
-    for(int i = 0; i < sizeof(allowed_extensions) / sizeof(allowed_extensions[0]); i++){
-        if(path.extension() == allowed_extensions[i]){
-            return true;
+    for(int i = 0; i < banned_extensions.size(); i++){
+        if(banned_extensions[i].compare(path.extension().string()) == 0){
+            return false;
         }
     }
-    return false;
+    return true;
 }
+
+bool in_allowed_directory(const std::filesystem::path& path){
+    for(const auto& banned_dir : banned_directories){
+        std::cout << "Checking path: " << path.string() << " against banned directory: " << banned_dir << std::endl;
+        if(std::filesystem::equivalent(path.parent_path(), banned_dir)){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 auto push_data_to_vector = [](const std::filesystem::directory_entry& entry, std::vector<File_Data>* file_datas) {
     file_datas->push_back(get_file_data(entry));
@@ -52,12 +63,12 @@ void itterate_files(const std::filesystem::path& path, std::vector<File_Data>* f
         time_t start = time(0);
         if(recursive){
             for(auto& entry : std::filesystem::recursive_directory_iterator(path)){
-                if(!has_allowed_extension(entry.path())) continue;
+                if(!has_allowed_extension(entry.path()) || !in_allowed_directory(entry.path())) continue;
                 threads.emplace_back(push_data_to_vector, entry, file_datas);
             }
         } else{
             for(auto& entry : std::filesystem::directory_iterator(path)){
-                if(!has_allowed_extension(entry.path())) continue;
+                if(!has_allowed_extension(entry.path()) || !in_allowed_directory(entry.path())) continue;
                 threads.emplace_back(push_data_to_vector, entry, file_datas);
             }
         }

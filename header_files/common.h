@@ -4,9 +4,12 @@
 #include <iostream>
 #include <filesystem>
 #include <map>
+#include <vector>
+#include <string>
 
-//!UPDATE THIS ARRAY TO ADD MORE FILE EXTENSIONS
-extern std::string allowed_extensions[30];
+extern std::vector<std::string> banned_extensions;
+extern std::vector<std::filesystem::path> banned_directories;
+
 
 extern bool recursive;
 
@@ -22,4 +25,4 @@ struct File_Data{
 };
 
 
-#endif // COMMON_H
+#endif //COMMON_H

@@ -1,8 +1,8 @@
 #include "../header_files/common.h"
 
-std::string allowed_extensions[] = {
-    ".cpp", ".py", ".c", ".cs", ".rs", ".js", ".java", ".html", ".css", ".php", ".sql", ".sh", ".bat", ".ps1", ".asm", ".go", ".rb", ".lua", ".pl", ".swift", ".kt", ".ts", ".json", ".xml", ".yml", ".yaml", ".toml", ".ini", ".cfg", ".md"
-};
+std::vector<std::string> banned_extensions;
+std::vector<std::filesystem::path> banned_directories;
+
 
 std::map<std::string, unsigned int> extension_sum;
 

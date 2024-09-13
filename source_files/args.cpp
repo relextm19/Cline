@@ -2,7 +2,7 @@
 #include "../header_files/common.h"
 
 char argument_list[] = {
-    'p','h', 'r'
+    'p','h', 'r', 'e', 'd'
 };
 
 void parse_args(int argc, char* argv[], std::filesystem::path* path){
@@ -21,11 +21,7 @@ void parse_args(int argc, char* argv[], std::filesystem::path* path){
                 case 'p':
                     if(i + 1 > argc || argv[i+1][0] == '-') break;
                     path->clear();
-                    while(argv[i + 1][k] != '\0'){
-                        *path += argv[i + 1][k];
-                        k++;
-                    } 
-                    i++;
+                    *path = argv[i + 1];
                     break;
 
                 case 'h':
@@ -35,6 +31,19 @@ void parse_args(int argc, char* argv[], std::filesystem::path* path){
                 case 'r':
                     recursive = true;
                     break;
+
+                case 'e':
+                    if(i + 1 > argc || argv[i+1][0] == '-') break;
+
+                    banned_extensions.push_back(argv[i + 1]);
+                    break;
+
+                case 'd':
+                    if(i + 1 > argc || argv[i+1][0] == '-') break;
+
+                    banned_directories.push_back(argv[i + 1]);
+                    break;
+
 
                 default:
                     break;
