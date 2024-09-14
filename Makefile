@@ -9,10 +9,10 @@ SRC_DIR = source_files
 OBJ_DIR = build
 
 # Source files
-SRCS = main.cpp common.cpp args.cpp file_actions.cpp printing.cpp
+SRCS = main.cpp common.cpp args.cpp file_actions.cpp printing.cpp thread_pool.cpp
 
 # Object files
-OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/common.o $(OBJ_DIR)/args.o $(OBJ_DIR)/file_actions.o $(OBJ_DIR)/printing.o
+OBJS = $(OBJ_DIR)/main.o $(OBJ_DIR)/common.o $(OBJ_DIR)/args.o $(OBJ_DIR)/file_actions.o $(OBJ_DIR)/printing.o $(OBJ_DIR)/thread_pool.o
 
 # Executable name
 EXEC = cline
@@ -43,6 +43,9 @@ $(OBJ_DIR)/file_actions.o: $(SRC_DIR)/file_actions.cpp
 
 $(OBJ_DIR)/printing.o: $(SRC_DIR)/printing.cpp
 	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)/printing.cpp -o $(OBJ_DIR)/printing.o
+
+$(OBJ_DIR)/thread_pool.o: $(SRC_DIR)/thread_pool.cpp
+	$(CXX) $(CXXFLAGS) -c $(SRC_DIR)/thread_pool.cpp -o $(OBJ_DIR)/thread_pool.o
 
 # Clean up build files
 clean:

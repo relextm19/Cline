@@ -1,9 +1,6 @@
 #ifndef PRINTING_H
 #define PRINTING_H
 
-#include <vector>
-#include <iomanip>
-
 #include "common.h"
 
 void print_footer();
