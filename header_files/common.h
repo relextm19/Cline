@@ -6,6 +6,12 @@
 #include <map>
 #include <vector>
 #include <string>
+#include <thread>
+#include <iomanip>
+#include <fstream>
+#include <time.h>
+#include "thread_pool.h"
+
 
 extern std::vector<std::string> banned_extensions;
 extern std::vector<std::filesystem::path> banned_directories;
