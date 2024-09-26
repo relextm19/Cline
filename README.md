@@ -8,7 +8,6 @@
 - **Recursive Mode**: 
 
 ### Modes
-- **-p**: Specify the path to the directory you want to analyze.
 - **-r**: Enable recursive analysis of subdirectories.
 - **-h**: Display help information.
 - **-e**: Ban file extensions
@@ -30,7 +29,7 @@ Make utility installed on your system to use the provided Makefile.
 3. **Run the Program**:  
    Run the compiled executable, specifying any desired options:
    ```sh
-   ./cline -p <path> -r
+   ./cline -r
    ```
    Or just use it without any to use it on the directory you are located in(You must add the compiled program to the path first):
    ```sh
@@ -39,7 +38,7 @@ Make utility installed on your system to use the provided Makefile.
 
 ### Example Command
 ```sh
-./cline -p /your/directory/path -r
+./cline -r -e '.exe'
 ```
 
 This will analyze all supported files in the specified directory and its subdirectories, providing a detailed report.
